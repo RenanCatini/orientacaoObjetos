@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+/home/2024.1.08.042/orientacaoObjetos/.metadata/.plugins/org.eclipse.jdt.core
-1865797976.index
-2578749039.index
-3819591271.index
