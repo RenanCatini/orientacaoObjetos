@@ -1,0 +1,33 @@
+Resumo do Curso de Programação Orientada a Objetos e Linguagem de Programação Java
+
+Episódio 0 - Parte 1
+    - Introdução à Tecnologia Java
+
+Episódio 0 - Parte 2
+    - Configuramos o ambiente de Desenvolvimento no Windows
+
+Episódio 1
+    *Abstração - Ocultar os detalhes desnecessários para o software.
+
+    *Classes - Um modelo (template) que incorpora características (representadas por atributos/campos/
+        variáveis de instância) e funcionalidades (representadas por métodos [funções]). Esse modelo
+        é usado como base para N objetos.
+        Classe é constituida de membros (campos, construtores e métodos)
+
+    *Objetos - São entidades criadas a partir de classes (processo de instanciação). A classe determina
+        a estutura que os objetos em nível de execução vão compartilhar. Dados específicos estão presentes
+        em cada objeto.
+
+    *Por exemplo:
+        Classe Aluno com atributos nome, curso.
+
+        - Objeto 1 :
+            nome = "Patricia"
+            curso = "Odontologia"
+
+        - Objeto 2 :
+            nome = "Adriano"
+            curso = "Educação Física"
+
+            Aluno objeto1 = new Aluno();
+            Aluno objeto2 = new Aluno();
