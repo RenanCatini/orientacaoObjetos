@@ -1,4 +1,4 @@
-package epsodio1;
+package episodio5;
 
 public class Hospede {
      private String nome;  //Campo, variavel

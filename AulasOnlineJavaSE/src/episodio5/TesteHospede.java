@@ -1,9 +1,18 @@
-package epsodio1;
+package episodio5;
+
+/*
+* Mostrar para o compilador onde a variavel Date esta
+* O asterisco vai indicar que ele vai importar todas as variaveis necessarias
+*/
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class TesteHospede {
 
     public static void main(String[] args) {
-        Hospede claudia = new Hospede();  //Classe <nome> = new Classe();
+        //Classe <nome> = new Classe();
+        Hospede claudia = new Hospede();
         claudia.setNome("Claudia");
         claudia.setSobrenome("Cristina Catini");
 
@@ -19,6 +28,12 @@ public class TesteHospede {
         // exibindo o estado do objeto
         System.out.println("Nome...: " + fernando.getNome());
         System.out.println("Sobrenome...: " + fernando.getSobrenome());
+
+        Date data = new Date();
+        ArrayList lista = new ArrayList();
+
+
+
     }
 
 }
