@@ -1,0 +1,15 @@
+Comandos:
+
+  -Criar diretorio Maven: mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=false
+  
+  -Build Projeto: mvn package
+  
+  -Executar (ir para a raiz do diretorio): java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
+  
+  -Ele vai mandar tudo para uma pasta target
+  
+  -Se voce der: 'mvn clean' ele vai apagar a pasta target
+  
+  *Obs: Os nomes podem mudar*
+  
+  *Sabemos que é um projeto Maven quando no diretorio criado existe um arquivo .pom
