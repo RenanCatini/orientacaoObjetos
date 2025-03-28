@@ -27,5 +27,7 @@ Aqui está a descrição de cada diretório presente no repositório:
 
 2. **Explore os diretórios** para visualizar os exemplos de código e os exercícios resolvidos.
 
+3. **Obs:** Usamos nessa matéria a ferramenta de build **Maven**.
+
 ---
 
