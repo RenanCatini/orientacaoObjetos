@@ -27,21 +27,5 @@ Aqui está a descrição de cada diretório presente no repositório:
 
 2. **Explore os diretórios** para visualizar os exemplos de código e os exercícios resolvidos.
 
-
 ---
 
-## 📚 Conceitos Abordados
-
-Este repositório cobre os principais conceitos da Orientação a Objetos:
-
-- **Classes e Objetos** 🏷️
-- **Herança** 🌳
-- **Polimorfismo** 🔄
-- **Encapsulamento** 🔒
-- **Abstração** 🧠
-- **Interfaces** 🔌
-
----
-
-
-Feito com ❤️ para facilitar seus estudos em Orientação a Objetos!
