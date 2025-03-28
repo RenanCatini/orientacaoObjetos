@@ -1,4 +1,4 @@
-package org.example;
+import org.example.Guest;
 
 public class Main {
     public static void main(String[] args) {
