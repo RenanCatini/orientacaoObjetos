@@ -1,4 +1,4 @@
-import org.example.Guest;
+import org.example.wrapper.classes.Guest;
 
 public class Main {
     public static void main(String[] args) {
