@@ -134,12 +134,30 @@ ________________________________________________________________________________
 Tipos primitivos:
     - Existem 8 tipos primitivos dentro da linguagem:
         byte, short, int, long, float, double, char e boolean.
+
     - Deles 4 são para numeros inteiros:
         byte (8 bits), short (16 bits), int (32 bits), long (64 bits)
+
     - 2 tipos para números de ponto flutuante:
         float (32 bits), double (64 bits)
-    - 1 tipo sem sinal para representar elementos e caracteres especiais
-        char (16 bits) - Unicode
+
+    - 1 tipo sem sinal para representar elementos e caracteres especiais (char)
+        - Tipo numerico de (16 bits), sem sinal, usados para representar um caracter Unicode
+            - char carac1 = 'a';
+            - char carac2 = 65;
+            - char carac3 = '\uXXXX';
+        - Alem do \u, podemos usar sequencias especiais de scape
+            \b      backspace
+            \t      tabulação
+            \n      quebra de linha
+            \'      aspas simples
+            \"      aspas dupla
+            \\      barra invertida
+        - Conseguimos representar 65.535
+            - Atualmente o tipo char de 16 bits não é suficiente para todos os caracteres unicode
+        - Literais do tipo char são envoltos por ''
+        - Diferentes de Strings (Objetos java com "")
+
     - 1 tipo para valores lógicos:
         boolean (true e false)
 
@@ -162,6 +180,19 @@ Tipos de Referência:
     - Null é um valor especial que indica que uma referencia não esta apontando para nenhum objeto na Heap.
     Esse valor pode ser atribuido ou testado apenas com referencias e não com tipos primitivos.
 
+________________________________________________________________________________________________________________________
+                    Conversão, Coerção (Casting) de Tipos primitivos e de referencia
+
+- Temos que ter cuidado quando formos fazer atribuições de valores de tipos distintos
+    se a informação puder ser perdida em uma atribuição, o programador deve confirmar a atribuicao com casting
+        - a atribuição de um long para um int precisa de um casting explicito (int)
+
+- Variaveis sao automaticamente promovidas a um superior
+    - Expressao é compativel com a atribuição
+    - Exemplo de um int (32 bits) para long (64 bits)
+
+- Quando somamos byte + byte, short + short ou byte + short, temos o resultado como Int
+    - solução: atribuir o resultado para um Int ou fazer um casting do resultado para o tipo desejado
 
 ________________________________________________________________________________________________________________________
                 Conversão de nomenclatura
@@ -224,4 +255,105 @@ Blocos;
 
     }
     Uma variavel definida dentro de um bloco se extingue apos a execução do mesmo
+
+________________________________________________________________________________________________________________________
+                     Escopo e iniciação de Variaveis
+Escopo:
+ O exemplo exibido para discutir o conceito de escopo é puramente ilustrativo ja que não é recomendado usarmos nomes
+identicos de variaveis em escopos distintos ja que isso pode tornar a depuraçãi mais tediosa.
+
+ Variaveis definidas no escopo de metodos, construtores ou blocos de seleção, repeticao (if, for) são locais a estes
+blocos e são conhecidas como variaveis locais, variaveis de pilha, variaveis temporarias.
+
+ Variaveis definidas no bloco da classe são visiveis por toda a classe e são conhecidas como variaveis de intancia
+variaveis campo ou atrubutos.
+
+Iniciação:
+ Variaveis locais são sao iniciadas automaticamente. Cabe ao programador definir um valor inicial a elas, ja as
+variaveis de instancia são iniciadas automaticamente, sem a intervenção do programdador
+
+Variaveis                    Valor de iniciação
+byte                                0
+short                               0
+int                                 0
+long                                0L
+float                               0.0F
+double                              0.0D
+char                                \u0000
+boolean                             False
+tipos de referencia                 null
+
+________________________________________________________________________________________________________________________
+                           Identificadores e Palavras Reservadas
+    - Identificador é o nome dado a uma classe, variavel ou método.
+Identificadores começam com uma letra, sublinhado ou com simbolo de $
+Caracteres subsequentes do identificadores podem ser digitos.
+Identificadores são sensiveis ao contexto ( A diferenca de a)
+
+Exemplo de identificadores validos:
+    identificador;
+    _VariavelValida;
+    $variavelValida;
+    numero5;
+
+Exemplo de identificadores invalidos:
+    5variavel;
+
+Identificadores não podem ser palavras reservadas da linguagem
+// Resumo pagliares
+
+________________________________________________________________________________________________________________________
+                            Atribuição de referencias
+ Quando duas variaveis de referencia estão apontando para o mesmo objeto na heap temos o efeito colateral de que ao
+se alterar o estado de um objeto com uma das referencias, esta alteração é propagada para o outro obejeto.
+    exemplo:
+    Hospede h1 = new Hospede("Renan", "Catini");
+    Hospede h2 = h1;
+    h2.setNome("Larissa");  ///Tanto h1 como h2 apontarão para um objeto de estado "Larissa Catini"
+
+________________________________________________________________________________________________________________________
+                    Refactoring
+  A tecnica de refactoring tem como objetivo a limpeza de código que ja esta funcionando, sem acrescentar novas
+funcionalidades.
+  A técnica é descrita no famoso livro do Martin Fowler chamado "Refactoring: improving the design o existing code"
+
+________________________________________________________________________________________________________________________
+                        Associações
+  Um relacionamento semantico em instancias de classes
+  Podem restringidos por multiplicidade e navegabilidade
+  Existem diversos tipos de relacionamentos de associações baseadas em sua multiplicidade e navegabilidade
+  Por exemplo:
+    Associação 1:1 (Multiplicidade) - Hospede Reside Em Um Endereço
+    Navegabilidade (unidirecional) de hospede para endereço:
+        - Metodos de hospedes enviam mensagens para métodos de endereço, o contrário não é verdade
+        - Endereço não sabe da existencia de hospede
+        - Dessa forma, mudanças na classe hosped não afetam a classe Endereço
+
+________________________________________________________________________________________________________________________
+                    Palavra reservada this
+ Existem 3 formas para a utilização da palavra this:
+    1 - Resolver ambiguidade entre variaveis com o mesmo nome, declaradas em escopos distintos
+         - exemplo: variavel local com o mesmo nome de uma variavel de instancia
+         - o this, precedendo a variavel indica que a mesma representa variavel de instancia
+
+    2 - This recursivo:
+        - Permite eliminar duplicidade de codigos dentro dos construtores, chamando os construtores sobrecarregados
+        recursivamente
+        - A primeira linha de um construtor deve ser um this recursivo ou um super
+
+    3 - Passagem da referencia atual sendo executda para outro obejto
+
+________________________________________________________________________________________________________________________
+                                Passagem de Argumentos
+
+- Java so passa argumentos para um método por VALOR, SEMPRE!!!
+
+- Em passagem por valor, uma copia do parametro é feita localmente e uma alteração na copia não altera a original
+
+- Quando passamos objetos para um método, uma cópia do endereço é feita. Não existe passagem por referencia em Java
+
+
+
+
+
 

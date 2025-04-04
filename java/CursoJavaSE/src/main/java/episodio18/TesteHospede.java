@@ -1,4 +1,4 @@
-package episodio15;
+package episodio18;
 
 /*
 * Mostrar para o compilador onde a variavel Date esta
@@ -60,8 +60,8 @@ public class TesteHospede {
         System.out.println(numero.MIN_VALUE);
         System.out.println(numero.MAX_VALUE);
 
-        Hospede igor = null;
-        System.out.println(igor.nome);
+        //Hospede igor = null;
+        //System.out.println(igor.nome);
 
 
     }
