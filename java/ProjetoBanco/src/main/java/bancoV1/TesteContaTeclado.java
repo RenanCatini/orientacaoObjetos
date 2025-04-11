@@ -1,4 +1,4 @@
-package banco;
+package bancoV1;
 
 import java.util.Scanner;
 

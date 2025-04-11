@@ -20,7 +20,7 @@ public class Veiculo {
 
     public boolean adicionarCaixa(double peso) {
         if(this.carga + quilosParaNewtons(peso) <= this.cargaMaxima) {
-            this.carga = this.carga + quilosParaNewtons(peso);
+            this.carga += quilosParaNewtons(peso);
             return true;
         }
         return false;

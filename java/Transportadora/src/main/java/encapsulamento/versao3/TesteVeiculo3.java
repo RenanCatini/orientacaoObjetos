@@ -11,7 +11,6 @@ public class TesteVeiculo3 {
         double pesoCaixa = sc.nextDouble();
         System.out.println("Adicionando a caixa número " + numeroCaixa + " (" + pesoCaixa + "Kg) :"
                 + veiculo.adicionarCaixa(pesoCaixa));
-
     }
 
     public static void main(String[] args) {

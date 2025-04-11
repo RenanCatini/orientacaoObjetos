@@ -1,4 +1,4 @@
-package banco;
+package bancoV1;
 
 public class Conta {
     private double saldo;
