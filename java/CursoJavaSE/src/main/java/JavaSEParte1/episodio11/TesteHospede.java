@@ -1,11 +1,10 @@
-package episodio11;
+package JavaSEParte1.episodio11;
 
 /*
 * Mostrar para o compilador onde a variavel Date esta
 * O asterisco vai indicar que ele vai importar todas as variaveis necessarias
 */
 
-import javax.xml.crypto.dsig.spec.XSLTTransformParameterSpec;
 import java.util.ArrayList;
 import java.util.Date;
 

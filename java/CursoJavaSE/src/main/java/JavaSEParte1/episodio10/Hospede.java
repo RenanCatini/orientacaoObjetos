@@ -1,6 +1,4 @@
-package episodio10;
-
-import java.sql.Date;
+package JavaSEParte1.episodio10;
 
 public class Hospede {
      String nome;  //Campo, variavel

@@ -1,4 +1,4 @@
-package episodio24;
+package JavaSEParte1.episodio24;
 
 public class TesteHospede {
 

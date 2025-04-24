@@ -1,4 +1,4 @@
-package episodio23;
+package JavaSEParte1.episodio23;
 
 public class  Hospede {
      private String nome;

@@ -1,4 +1,4 @@
-package episodio9;
+package JavaSEParte1.episodio9;
 
 public class Hospede {
      String nome;  //Campo, variavel

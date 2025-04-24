@@ -1,6 +1,4 @@
-package episodio27;
-
-import java.util.Date;
+package JavaSEParte1.episodio27;
 
 public class TestePassagemValores {
     public static void main(String[] args) {

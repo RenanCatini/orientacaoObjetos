@@ -1,6 +1,4 @@
-package episodio20;
-
-import java.util.*;
+package JavaSEParte1.episodio20;
 
 public class TesteHospede {
 

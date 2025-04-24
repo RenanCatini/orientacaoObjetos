@@ -1,4 +1,4 @@
-package episodio18;
+package JavaSEParte1.episodio18;
 
 public class TesteIniciacaoVariaveis {
     byte vb;

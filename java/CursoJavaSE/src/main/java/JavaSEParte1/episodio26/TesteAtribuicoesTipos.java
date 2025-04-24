@@ -1,4 +1,4 @@
-package episodio26;
+package JavaSEParte1.episodio26;
 
 public class TesteAtribuicoesTipos {
     public static void main(String[] args) {

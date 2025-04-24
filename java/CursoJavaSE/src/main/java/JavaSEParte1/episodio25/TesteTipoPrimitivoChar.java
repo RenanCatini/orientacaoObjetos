@@ -1,4 +1,4 @@
-package episodio25;
+package JavaSEParte1.episodio25;
 
 public class TesteTipoPrimitivoChar {
     public static void main(String[] args) {

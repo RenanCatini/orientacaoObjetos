@@ -1,4 +1,4 @@
-package episodio9;
+package JavaSEParte1.episodio9;
 
 /*
 * Mostrar para o compilador onde a variavel Date esta

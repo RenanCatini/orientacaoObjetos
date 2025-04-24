@@ -1,4 +1,4 @@
-package episodio27;
+package JavaSEParte1.episodio27;
 
 public class Data {
     private int dia, mes, ano;

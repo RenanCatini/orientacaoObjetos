@@ -1,4 +1,4 @@
-package episodio22;
+package JavaSEParte1.episodio22;
 
 public class Endereco {
     private String rua;
