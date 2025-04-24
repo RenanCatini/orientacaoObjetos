@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>episodio22.Endereco</OriginalElement>
+  <nodes>
+    <node x="-270.9173166926678" y="88.43681747269892">episodio22.Endereco</node>
+    <node x="-910.2480499219968" y="106.45553822152885">episodio22.Hospede</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="episodio22.Hospede" target="episodio22.Endereco" relationship="TO_ONE">
+      <point x="0.0" y="-220.0" />
+      <point x="-705.2480499219968" y="134.60686427457097" />
+      <point x="-654.4680187207488" y="134.60686427457097" />
+      <point x="-654.4680187207488" y="316.22464898595945" />
+      <point x="-36.91731669266778" y="316.22464898595945" />
+      <point x="0.0" y="250.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.9538690476190477" showDependencies="true" x="-334.5709828393136" y="373.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>protected</VISIBILITY>
+</Diagram>
+

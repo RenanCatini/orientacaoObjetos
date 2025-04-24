@@ -1,0 +1,359 @@
+Resumo do Curso de Programação Orientada a Objetos e Linguagem de Programação Java
+
+Episódio 0 - Parte 1
+    - Introdução à Tecnologia Java
+
+Episódio 0 - Parte 2
+    - Configuramos o ambiente de Desenvolvimento no Windows
+
+Episódio 1
+    * Abstração - Ocultar os detalhes desnecessários para o software.
+
+    * Classes - Um modelo (template) que incorpora características (representadas por atributos/campos/
+        variáveis de instância) e funcionalidades (representadas por métodos [funções]). Esse modelo
+        é usado como base para N objetos.
+        Classe é constituida de membros (campos, construtores e métodos)
+
+    * Objetos - São entidades criadas a partir de classes (processo de instanciação). A classe determina
+        a estutura que os objetos em nível de execução vão compartilhar. Dados específicos estão presentes
+        em cada objeto.
+
+    * Por exemplo:
+        Classe Aluno com atributos nome, curso.
+
+        - Objeto 1 :
+            nome = "Patricia"
+            curso = "Odontologia"
+
+        - Objeto 2 :
+            nome = "Adriano"
+            curso = "Educação Física"
+
+            Aluno objeto1 = new Aluno();
+            Aluno objeto2 = new Aluno();
+
+    * Pacotes - São estruturas da Linguagem Java que permitem organizar as classes de nossas apliações e fornecem
+        um mecanismo simples para o reuso de classes. O reuso é conseguido a partir do comando import, por
+        exemplo:
+            import java.util.*;  //Mostro para o compilador todas as classes do pacote java.util
+            import java.util.Date; //Exibo a localização de apenas uma classe
+
+        - A classe System pertence ao pacote java.lang que é importado por defaul.
+
+        - Recomenda-se sempre criar pacotes para organizar nossas classes e tornar o reuso de objetos sempre possivel.
+
+        - Pacotes são estruturas hierarquicas, escritos em letras minúsculas separadas por pontos, por
+            exemplo: br.com.renan.projetox.visao.relarorios
+
+        - Existem 3 cenários básicos para reuso de classes
+            1) Reuso de classes dentro do mesmo projeto
+            2) Reuso de classes da API do Java SE (classes fornecidas pelo JRE)
+            3) Reuso de classes de terceiros (normalmente incorporadas ao seu projeto por arquivos .jar)
+
+        - Podemos compilar e redirecionar a saida de classes presentes em pacotes, via linha de comando
+            javac -d <diretorioDestino> arquivos.java
+            java pacote.arquivo
+            // Dica: estar sempre na raiz para compilar e executar
+
+    * Modificadores de acesso
+        - Existem 4 modificadores de acesso na Linguagem Java que controlam a acessibilidade de classes e
+            e seus membros perante outros objetos de sua aplicação.
+            São eles: private, public, protected e packed-friendly (que é o default e não precisa der declarado)
+
+            - Private: Atributos e métodos definidos com esse modificador de acesso só são acessiveis a partir da
+                própria classe que os definiu.
+
+            - Public: Atributos e métodos que são com rotulados com esse modificador possuem acesso universal a
+                partir de qualquer classe dentro do projeto.
+
+            - Package-Friendly: Este modificador faz com que os membros declarados com visibilidade de pacote só
+                possam ser acessados por metodos e construtores presentes na mesma classe onde os membros com
+                visibilidade foram definidos e por outros objetos pertencentes ao mesmo pacote. Não conseguimos
+                acessar membros de classes com visibilidade de pacote a partir de outro pacote.
+                Uma classe com visibilidade de pacote so pode ser acessada a partir do mesmo pacote.
+
+            - Protected: Discutir mais a diante pois depende de conceito de herança.
+
+________________________________________________________________________________________________________________________
+            Criação de objetos com o operador New
+
+- Toda classe tem pelo menos um construtor que é invocado para a criação de objetos. Por padrao, não precisamos
+explicitamente definir um construtor que não recebe argumento. O mesmo é inserido automaticamente pela linguagem
+java.
+
+- Os construtores são diferentes de métodos por não possuirem tipo de retorno, e são eles os primeiros membros a
+serem invocados por uma classe no momento de instanciação do objeto com o operador new.
+
+- Se vc criar um construtor que recebe algum parâmetro, voce perde o construtor default, nesse caso havendo
+necessidade voce deve explicitamente escrever um construtor default que não recebe parametros.
+
+________________________________________________________________________________________________________________________
+                    Sintaxe e layout de um arquivo fonte em Java
+
+- Sintaxe dos membros e elementos de uma classe em Java:
+
+    - Sintaxe de uma classe: <modificador_acesso> class <nome_classe>
+    - Sintaxe de atributos: <modificadod_acesso> tipo <nome_atributo> [=valor inicial]
+    - Sintaxe de um construtor: <nome_construtor>([<lista de argumentos>])
+    - Sintaxe de um método: [<modificador_acesso>] <tipo_retorno> <nome_metodo>([<Lista de argumentos>])
+    - Sintaxe de um pacote: <nome_pacote_raiz>[.<nome_subpacote>]
+    - Sintaxe do import: import <nome_pacote>[<.nome_subpacote>].<nome_classe>
+                         import <nome_pacote>[<.nome_subpacote>].*
+
+- Layout de arquivo fonte em Java:
+    - O nome da classe publica indica o nome do arquivo .java, por exemplo classe Hospede e arquivo Hospede.java
+
+    [<declaracao_pacote>]
+    [<declaracao_import>] +
+    <declaracao_classes>
+        <declaraccao_campos> +
+        <declaracao_construtores> +
+        <declaracao_metodos> +
+
+    O tipo de retorno de um método pode ser qualquer tipo primitivo, tipo de referencia ou void (indicando que o
+   método não retorna nenhum valor para o codido que o cliente o invocou)
+
+    Quando um método retorna algum valor para o código cliente que o invocou, cabe ao cliente decidir se deve ou
+   não capturar esse retorno para uso mais adiante no código.
+
+    Sintaxe basica no codigo cliente:
+      <tipoRetorno> <nomeVariavel> = <referencia>.<nomeMetodo>([<lista_parametros>])
+      Exemplo: String nome = renan.getNome();
+               double salario = renan.GetSalario();
+
+________________________________________________________________________________________________________________________
+                                      Comentários
+
+- Existem 3 tipos de comentários em Java:
+    1) Comentário em 1 linha: //
+    2) Comentário de múltiplas linhas: /* */
+    3) Comentário específico para a geração de documentação HTML
+
+________________________________________________________________________________________________________________________
+                                Tipos primitivos e tipos de Referencia
+Tipos primitivos:
+    - Existem 8 tipos primitivos dentro da linguagem:
+        byte, short, int, long, float, double, char e boolean.
+
+    - Deles 4 são para numeros inteiros:
+        byte (8 bits), short (16 bits), int (32 bits), long (64 bits)
+
+    - 2 tipos para números de ponto flutuante:
+        float (32 bits), double (64 bits)
+
+    - 1 tipo sem sinal para representar elementos e caracteres especiais (char)
+        - Tipo numerico de (16 bits), sem sinal, usados para representar um caracter Unicode
+            - char carac1 = 'a';
+            - char carac2 = 65;
+            - char carac3 = '\uXXXX';
+        - Alem do \u, podemos usar sequencias especiais de scape
+            \b      backspace
+            \t      tabulação
+            \n      quebra de linha
+            \'      aspas simples
+            \"      aspas dupla
+            \\      barra invertida
+        - Conseguimos representar 65.535
+            - Atualmente o tipo char de 16 bits não é suficiente para todos os caracteres unicode
+        - Literais do tipo char são envoltos por ''
+        - Diferentes de Strings (Objetos java com "")
+
+    - 1 tipo para valores lógicos:
+        boolean (true e false)
+
+    - Todos os tipos primitivos se iniciam com letra mínusculas
+
+Tipos de Referência:
+    - Além dos tipos primitivos, todos os temais tipos são chamados de tipos de referencia, que sao tipos
+    associados na Heap diferentemente de tipos primitivos que não são objetos.
+    Exemplo: Tipo String que representa uma cadeia de caracteres
+             String em java é um objeto, não um tipo primitivo.
+
+    - Qual a vantagem de String ser um tipo de referencia (objeto) e não um tipo primitivo?
+        A Possibilidade de se reutilizar os metodos uteis ja implementados.
+
+    - Qual a desvantagem de String ser um tipo de referencia (objeto) e não um tipo primitivo?
+        Pior performace
+
+    - Tipos de referencia se iniciam com a primeira letra em maiúscula
+
+    - Null é um valor especial que indica que uma referencia não esta apontando para nenhum objeto na Heap.
+    Esse valor pode ser atribuido ou testado apenas com referencias e não com tipos primitivos.
+
+________________________________________________________________________________________________________________________
+                    Conversão, Coerção (Casting) de Tipos primitivos e de referencia
+
+- Temos que ter cuidado quando formos fazer atribuições de valores de tipos distintos
+    se a informação puder ser perdida em uma atribuição, o programador deve confirmar a atribuicao com casting
+        - a atribuição de um long para um int precisa de um casting explicito (int)
+
+- Variaveis sao automaticamente promovidas a um superior
+    - Expressao é compativel com a atribuição
+    - Exemplo de um int (32 bits) para long (64 bits)
+
+- Quando somamos byte + byte, short + short ou byte + short, temos o resultado como Int
+    - solução: atribuir o resultado para um Int ou fazer um casting do resultado para o tipo desejado
+
+________________________________________________________________________________________________________________________
+                Conversão de nomenclatura
+
+Java é uma linguagem Case Sensitive
+    - diferencia maiusculas de minúsculas
+        exemplo: hospede, Hospede e hosPede são diferentes
+
+Costumamos usar uma convenção (não obrigatoria) para nomear os identificadores em Java:
+    - Classes: Iniciam com a primeira letra em maiúsculo, caso seja composta, cada letra de substring é maiúscula
+        São sempre substantivos
+        Exemplos: Hospede, CatalogoProdutos.
+
+    - Métodos: Iniciam com a primeira letra em minúcula, caso seja composta, cada letra de substring é maiúscula
+        Sempre costumam ser verbos, ações
+        Exemplo: calcularImposto(), getNome(), imprimir()
+
+    - Variaveis: Iniciam com a primeira letra em minúcula, caso seja composta, cada letra de substring é maiúscula
+        Exemplo: hospede, impostoAPagar, idade, dataDeNascimento
+
+    - Pacotes: tudo em letra minuscula separado por pontos
+        Exemplo: br.com.renan.sistemax.tela, java.util
+
+    - Constantes: Tudo em maiuculo, se composta separadas por underline
+        Exemplo: PI, FORCA_GRAVIDADE
+
+________________________________________________________________________________________________________________________
+                Blocos e espaço em branco
+Espaços em Branco:
+    Espaços em branco são ignorados pelo compilador e devem ser usados para tornar nossos codigos mais legiveis
+        - Use espacos em branco para identar seus codigos
+        - Usando níveis de aninhamento (tabulação) no momento que estiver codificando
+
+Blocos;
+    Conjunto de 0, 1 ou mais intruções delimitadas por { }
+    Definem o escopo de vizualização de nossas variaveis
+
+    class {   // Bloco externo
+
+        private String nome;
+
+        construtor () {   // Bloco construtor
+            nome = "Renan";
+            int idade = 0;
+        }
+
+        metodo() {   // Bloco metodo
+            nome = "Catini Amaral";
+            idade = 55; // Não pode pois idade so esta dentro do construtor
+
+            estuturas de seleção (exemplo if) {     // Bloco if
+                nome = nome + "19";
+            }
+
+            estruturas de repeticao (for) {     // Bloco for
+
+            }
+
+        }
+
+    }
+    Uma variavel definida dentro de um bloco se extingue apos a execução do mesmo
+
+________________________________________________________________________________________________________________________
+                     Escopo e iniciação de Variaveis
+Escopo:
+ O exemplo exibido para discutir o conceito de escopo é puramente ilustrativo ja que não é recomendado usarmos nomes
+identicos de variaveis em escopos distintos ja que isso pode tornar a depuraçãi mais tediosa.
+
+ Variaveis definidas no escopo de metodos, construtores ou blocos de seleção, repeticao (if, for) são locais a estes
+blocos e são conhecidas como variaveis locais, variaveis de pilha, variaveis temporarias.
+
+ Variaveis definidas no bloco da classe são visiveis por toda a classe e são conhecidas como variaveis de intancia
+variaveis campo ou atrubutos.
+
+Iniciação:
+ Variaveis locais são sao iniciadas automaticamente. Cabe ao programador definir um valor inicial a elas, ja as
+variaveis de instancia são iniciadas automaticamente, sem a intervenção do programdador
+
+Variaveis                    Valor de iniciação
+byte                                0
+short                               0
+int                                 0
+long                                0L
+float                               0.0F
+double                              0.0D
+char                                \u0000
+boolean                             False
+tipos de referencia                 null
+
+________________________________________________________________________________________________________________________
+                           Identificadores e Palavras Reservadas
+    - Identificador é o nome dado a uma classe, variavel ou método.
+Identificadores começam com uma letra, sublinhado ou com simbolo de $
+Caracteres subsequentes do identificadores podem ser digitos.
+Identificadores são sensiveis ao contexto ( A diferenca de a)
+
+Exemplo de identificadores validos:
+    identificador;
+    _VariavelValida;
+    $variavelValida;
+    numero5;
+
+Exemplo de identificadores invalidos:
+    5variavel;
+
+Identificadores não podem ser palavras reservadas da linguagem
+// Resumo pagliares
+
+________________________________________________________________________________________________________________________
+                            Atribuição de referencias
+ Quando duas variaveis de referencia estão apontando para o mesmo objeto na heap temos o efeito colateral de que ao
+se alterar o estado de um objeto com uma das referencias, esta alteração é propagada para o outro obejeto.
+    exemplo:
+    Hospede h1 = new Hospede("Renan", "Catini");
+    Hospede h2 = h1;
+    h2.setNome("Larissa");  ///Tanto h1 como h2 apontarão para um objeto de estado "Larissa Catini"
+
+________________________________________________________________________________________________________________________
+                    Refactoring
+  A tecnica de refactoring tem como objetivo a limpeza de código que ja esta funcionando, sem acrescentar novas
+funcionalidades.
+  A técnica é descrita no famoso livro do Martin Fowler chamado "Refactoring: improving the design o existing code"
+
+________________________________________________________________________________________________________________________
+                        Associações
+  Um relacionamento semantico em instancias de classes
+  Podem restringidos por multiplicidade e navegabilidade
+  Existem diversos tipos de relacionamentos de associações baseadas em sua multiplicidade e navegabilidade
+  Por exemplo:
+    Associação 1:1 (Multiplicidade) - Hospede Reside Em Um Endereço
+    Navegabilidade (unidirecional) de hospede para endereço:
+        - Metodos de hospedes enviam mensagens para métodos de endereço, o contrário não é verdade
+        - Endereço não sabe da existencia de hospede
+        - Dessa forma, mudanças na classe hosped não afetam a classe Endereço
+
+________________________________________________________________________________________________________________________
+                    Palavra reservada this
+ Existem 3 formas para a utilização da palavra this:
+    1 - Resolver ambiguidade entre variaveis com o mesmo nome, declaradas em escopos distintos
+         - exemplo: variavel local com o mesmo nome de uma variavel de instancia
+         - o this, precedendo a variavel indica que a mesma representa variavel de instancia
+
+    2 - This recursivo:
+        - Permite eliminar duplicidade de codigos dentro dos construtores, chamando os construtores sobrecarregados
+        recursivamente
+        - A primeira linha de um construtor deve ser um this recursivo ou um super
+
+    3 - Passagem da referencia atual sendo executda para outro obejto
+
+________________________________________________________________________________________________________________________
+                                Passagem de Argumentos
+
+- Java so passa argumentos para um método por VALOR, SEMPRE!!!
+
+- Em passagem por valor, uma copia do parametro é feita localmente e uma alteração na copia não altera a original
+
+- Quando passamos objetos para um método, uma cópia do endereço é feita. Não existe passagem por referencia em Java
+
+
+
+
+
+
