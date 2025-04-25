@@ -1,5 +1,4 @@
-package bancoV3;
-
+package bancoV4;
 
 public class TesteBanco {
     public static void main(String[] args) {
@@ -31,15 +30,16 @@ public class TesteBanco {
         meuBanco.adicionarCliente(diego);
         imprimeCliente(meuBanco);
 
-
-
     }
 
     public static void imprimeCliente(Banco banco) {
-        int num = banco.getNumeroDeClientes();
+        int num = banco.clientes.size() - 1;
         System.out.println("Cliente [" + num + "] : " + banco.getCliente(num).getNome() +
-            " " + banco.getCliente(num).getSobrenome() + ". Saldo de R$" +
-            banco.getCliente(num).getConta().getSaldo());
+                " " + banco.getCliente(num).getSobrenome() + ". Saldo de R$" +
+                banco.getCliente(num).getConta().getSaldo());
     }
 
 }
+
+
+

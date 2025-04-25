@@ -12,7 +12,7 @@ public class TesteBancoTeclado {
 
         System.out.print("-Digite seu nome: ");
         String nomeCliente = sc.nextLine();
-        System.out.print(("-Digite seu sobrenome: "));
+        System.out.print("-Digite seu sobrenome: ");
         String sobrenomeCliente = sc.nextLine();
         Cliente cliente = new Cliente(nomeCliente, sobrenomeCliente);
 
