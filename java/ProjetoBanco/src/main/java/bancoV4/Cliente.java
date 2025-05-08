@@ -5,9 +5,16 @@ public class  Cliente {
     private String sobrenome;
     private Conta conta;
 
+
     public Cliente(String nome, String sobrenome) {
         this.nome = nome;
         this.sobrenome = sobrenome;
+    }
+
+    public Cliente(String nome, String sobrenome, Conta conta){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.conta = conta;
     }
 
     public String getNome() {

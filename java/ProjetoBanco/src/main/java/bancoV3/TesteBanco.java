@@ -32,7 +32,6 @@ public class TesteBanco {
         imprimeCliente(meuBanco);
 
 
-
     }
 
     public static void imprimeCliente(Banco banco) {

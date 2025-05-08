@@ -58,10 +58,6 @@ public class TesteBancoTeclado {
                     break;
             }
 
-
-
-
-
         }while(opc != 3);
 
     }
