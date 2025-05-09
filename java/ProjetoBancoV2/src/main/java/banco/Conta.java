@@ -1,6 +1,6 @@
-package Banco;
+package banco;
 
-public class Conta {
+public abstract class Conta {
     protected double saldo;
 
     public Conta(double saldoInicial){

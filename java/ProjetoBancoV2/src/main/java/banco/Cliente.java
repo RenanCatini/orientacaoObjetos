@@ -1,20 +1,30 @@
-package Banco;
+package banco;
 
 public class  Cliente {
     private String nome;
     private String sobrenome;
-    private Conta conta;
-
+    private ContaPoupanca contaPoupanca;
+    private ContaCorrente contaCorrente;
 
     public Cliente(String nome, String sobrenome) {
         this.nome = nome;
         this.sobrenome = sobrenome;
+        this.contaPoupanca = null;
+        this.contaCorrente = null;
     }
 
-    public Cliente(String nome, String sobrenome, Conta conta){
+    public Cliente(String nome, String sobrenome, ContaCorrente contaCorrente){
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.conta = conta;
+        this.contaCorrente = contaCorrente;
+        this.contaPoupanca = null;
+    }
+
+    public Cliente(String nome, String sobrenome, ContaPoupanca contaPoupanca){
+        this.nome = nome;
+        this.sobrenome = sobrenome;
+        this.contaCorrente = null;
+        this.contaPoupanca = contaPoupanca;
     }
 
     public String getNome() {
@@ -33,12 +43,19 @@ public class  Cliente {
         this.sobrenome = sobrenome;
     }
 
-    public Conta getConta() {
-        return conta;
+    public Conta getContaCorrente() {
+        return contaCorrente;
     }
 
-    public void setConta(Conta conta) {
-        this.conta = conta;
+    public void setContaCorrente(ContaCorrente contaCorrente) {
+        this.contaCorrente = contaCorrente;
     }
 
+    public ContaPoupanca getContaPoupanca() {
+        return contaPoupanca;
+    }
+
+    public void setContaPoupanca(ContaPoupanca contaPoupanca) {
+        this.contaPoupanca = contaPoupanca;
+    }
 }
