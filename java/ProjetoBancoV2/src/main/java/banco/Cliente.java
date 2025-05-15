@@ -1,30 +1,18 @@
 package banco;
 
+import java.util.ArrayList;
+
 public class  Cliente {
     private String nome;
     private String sobrenome;
-    private ContaPoupanca contaPoupanca;
-    private ContaCorrente contaCorrente;
+    ArrayList<Conta> contas = new ArrayList<>();
+
+    private int numeroDeContas;
 
     public Cliente(String nome, String sobrenome) {
         this.nome = nome;
         this.sobrenome = sobrenome;
-        this.contaPoupanca = null;
-        this.contaCorrente = null;
-    }
-
-    public Cliente(String nome, String sobrenome, ContaCorrente contaCorrente){
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.contaCorrente = contaCorrente;
-        this.contaPoupanca = null;
-    }
-
-    public Cliente(String nome, String sobrenome, ContaPoupanca contaPoupanca){
-        this.nome = nome;
-        this.sobrenome = sobrenome;
-        this.contaCorrente = null;
-        this.contaPoupanca = contaPoupanca;
+        numeroDeContas = 0;
     }
 
     public String getNome() {
@@ -43,19 +31,17 @@ public class  Cliente {
         this.sobrenome = sobrenome;
     }
 
-    public Conta getContaCorrente() {
-        return contaCorrente;
+    public void adicionarConta(Conta conta) {
+        contas.add(conta);
+        numeroDeContas++;
     }
 
-    public void setContaCorrente(ContaCorrente contaCorrente) {
-        this.contaCorrente = contaCorrente;
+    public Conta getConta(int id) {
+        return contas.get(id);
     }
 
-    public ContaPoupanca getContaPoupanca() {
-        return contaPoupanca;
+    public int getNumeroDeContas() {
+        return numeroDeContas;
     }
 
-    public void setContaPoupanca(ContaPoupanca contaPoupanca) {
-        this.contaPoupanca = contaPoupanca;
-    }
 }

@@ -8,4 +8,7 @@ public class ContaPoupanca extends Conta {
         super(saldo);
         taxaDeRendimento = rendimento;
     }
+    public double getTaxaDeRendimento(){
+        return taxaDeRendimento;
+    }
 }
