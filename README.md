@@ -1,6 +1,6 @@
 # 🌟 Orientação a Objetos - Materiais de Estudo 🌟
 
-Este repositório é um espaço dedicado para armazenar exemplos, exercícios resolvidos e conceitos fundamentais da disciplina de **Orientação a Objetos**. Ele foi criado para te auxiliar durante a faculdade, com foco na prática e entendimento dos principais tópicos dessa área.
+Este repositório é um espaço dedicado para armazenar exemplos, exercícios resolvidos e conceitos fundamentais da disciplina de **Orientação a Objetos**. Ele foi criado para me auxiliar durante a faculdade, com foco na prática e entendimento dos principais tópicos dessa área.
 
 ---
 
