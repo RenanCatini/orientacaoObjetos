@@ -9,11 +9,11 @@ public class TesteBanco {
         Cliente cliente = null;
 
         // Cria dois clientes e suas respectivas contas
-        Cliente brunoHenrique = new Cliente("Bruno", "Henrique");
+        Cliente brunoHenrique = new Cliente("Bruno", "Henrique", "148.376.092-08");
         banco.adicionarCliente(brunoHenrique);
         brunoHenrique.adicionarConta(new ContaCorrente(220000.00, 40000.00));
 
-        Cliente gabrielBarbosa = new Cliente("Gabriel", "Barbosa");
+        Cliente gabrielBarbosa = new Cliente("Gabriel", "Barbosa", "309.521.637-00");
         banco.adicionarCliente(gabrielBarbosa);
         gabrielBarbosa.adicionarConta(new ContaCorrente(30000));
 

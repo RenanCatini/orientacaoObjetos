@@ -14,10 +14,6 @@ public class Banco {
         clientes.put(cliente.getCpf(), cliente);
     }
 
-    public int getNumeroDeClientes() {
-        return this.clientes.size();
-    }
-
     public Cliente getCliente(String cpf) {
         return clientes.get(cpf);
     }

@@ -1,6 +1,5 @@
 package banco;
 import banco.dominio.*;
-import banco.relatorios.RelatorioClientes;
 
 public class TesteBanco {
 
@@ -8,7 +7,6 @@ public class TesteBanco {
 
     Banco banco = Banco.getBanco();
     Cliente cliente;
-    RelatorioClientes relatorio = new RelatorioClientes();
 
     // Cria vários clientes e suas respectivas contas
     System.out.println("Criando uma conta corrente para o cliente Bruno Henrique.");
@@ -53,7 +51,5 @@ public class TesteBanco {
     lorenaLara.adicionarConta(contaDA);
     banco.adicionarCliente(lorenaLara);
 
-    // gerar o relatorio
-    relatorio.geraRelatorio();
   }
 }
